@@ -1,12 +1,46 @@
-.container {
+.page-container {
   max-width: 960px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 1rem;
 }
 
 .header {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   margin-bottom: 2rem;
+}
+.logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+.messengers span {
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    margin-top: 0.5rem;
+  }
+  .nav.open {
+    display: flex;
+  }
+  .burger {
+    display: block;
+  }
 }
 
 .hero {
@@ -15,21 +49,23 @@
 }
 
 .features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
   margin-bottom: 2rem;
 }
-
 .feature {
-  flex: 1 1 200px;
-  padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 8px;
+  padding: 1rem;
+}
+
+.faq details {
+  margin-bottom: 0.5rem;
 }
 
 .contact {
+  text-align: center;
   margin-bottom: 2rem;
 }
 
@@ -37,4 +73,49 @@
   text-align: center;
   font-size: 0.9rem;
   color: #555;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+}
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+.form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.4rem;
+  box-sizing: border-box;
+}
+.success {
+  text-align: center;
+}
+.policy {
+  font-size: 0.8rem;
 }
